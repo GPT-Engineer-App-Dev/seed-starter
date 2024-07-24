@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Layout from "./layouts/clean"; // available: clean, navbar, sidebar
+import Layout from "./layouts/navbar";
 import { navItems } from "./nav-items";
 
 const queryClient = new QueryClient();
@@ -18,6 +18,7 @@ const App = () => {
               {navItems.map((item) => (
                 <Route key={item.to} path={item.to} element={item.page} />
               ))}
+              <Route path="/get-started" element={<div className="p-4">Get Started Page (Placeholder)</div>} />
             </Route>
           </Routes>
         </Router>
